@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "python-package-template"
+version = "2.0.0"
+description = "A Python package template to jumpstart new projects"
+authors = ["Tomás Farías Santana <tomas@tomasfarias.dev>"]
+license = "MIT"
+readme = "README.md"
+
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1"
+flake8 = "^4.0"
+isort = "^5.10"
+mypy = "^0.931"
+pytest = "^6.2"
+pre-commit = "^2.17"
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''

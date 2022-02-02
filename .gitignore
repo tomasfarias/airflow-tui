@@ -6,3 +6,5 @@ build/
 dist/
 .eggs/
 .tox/
+.autoenv.zsh
+airflow/
